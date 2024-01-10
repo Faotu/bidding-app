@@ -1,0 +1,103 @@
+@import "components.css";
+
+@tailwind base;
+
+/* Start purging... */
+@tailwind utilities;
+/* Stop purging. */
+
+body {
+    text-rendering: geometricPrecision;
+
+    @apply bg-white text-gray-800 dark:bg-black-500 dark:text-gray-300 font-sans antialiased;
+}
+
+.hero-image-shadow {
+    box-shadow: 0 0 800px 0 var(--tw-shadow-color);
+}
+
+/*
+We hide the emulator warning at the bottom of the page.
+Please remove the following class if you want to display it
+ */
+.firebase-emulator-warning {
+    display: none;
+}
+
+.rbc-day-slot .rbc-event {
+    @apply bg-primary-500 rounded-md border-2 border-primary-200 text-xs !important;
+}
+.rbc-day-slot .rbc-background-event {
+    @apply bg-gray-500 rounded-md border-2 border-gray-200 !important;
+}
+.rbc-today {
+    @apply bg-primary-100 !important;
+}
+
+.rbc-toolbar button {
+    @apply bg-primary-500 text-white rounded-md border-2 border-primary-200 !important;
+}
+
+.rbc-toolbar button:hover {
+    @apply bg-primary-600 !important;
+}
+
+.rbc-toolbar button:active {
+    @apply bg-primary-700 !important;
+}
+
+.rbc-toolbar button:focus {
+    @apply bg-primary-700 !important;
+}
+
+.rbc-toolbar button:disabled {
+    @apply bg-primary-200 text-primary-400 !important;
+}
+
+.rbc-toolbar button:disabled:hover {
+    @apply bg-primary-200 !important;
+}
+
+.rbc-toolbar button:disabled:active {
+    @apply bg-primary-200 !important;
+}
+
+.rbc-toolbar button:disabled:focus {
+    @apply bg-primary-200 !important;
+}
+
+.rbc-toolbar button:disabled:focus-visible {
+    @apply bg-primary-200 !important;
+}
+
+.rbc-toolbar button:focus-visible {
+    @apply bg-primary-700 !important;
+}
+
+.rbc-toolbar button:focus-visible:hover {
+    @apply bg-primary-700 !important;
+}
+
+.rbc-toolbar button:focus-visible:active {
+    @apply bg-primary-700 !important;
+}
+
+.rbc-toolbar button:focus-visible:focus {
+    @apply bg-primary-700 !important;
+}
+
+.rbc-toolbar button:focus-visible:disabled {
+    @apply bg-primary-200 !important;
+}
+
+.rbc-toolbar button:focus-visible:disabled:hover {
+    @apply bg-primary-200 !important;
+}
+
+.rbc-toolbar button:focus-visible:disabled:active {
+    @apply bg-primary-200 !important;
+}
+
+.rbc-toolbar button:focus-visible:disabled:focus {
+    @apply bg-primary-200 !important;
+}

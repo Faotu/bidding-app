@@ -1,0 +1,15 @@
+{
+  "createEventSubmitLabel": "Create Event",
+  "createEventSuccess": "Event created successfully",
+  "createEventError": "Event not created. Please try again.",
+  "createEventLoading": "Creating event...",
+  "cancelEventSuccess": "Event cancelled successfully",
+  "cancelEventError": "Event not cancelled. Please try again.",
+  "cancelEventLoading": "Cancelling event...",
+  "selectTopicLabel": "Select a Topic",
+  "selectDateLabel": "Select a Date",
+  "selectTimeLabel": "Available Slot for",
+  "overlappingEventError": "There is already an event at this time. Please select another time.",
+  "timeNotAvailableError": "This time is not available. Please select another time.",
+  "invalidEventError": "Please select a valid date and time."
+}

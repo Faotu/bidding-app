@@ -1,0 +1,250 @@
+/* Start purging... */
+@tailwind components;
+
+@layer components {
+    /* Global Link Style */
+    a {
+        @apply outline-primary-200 outline-2 active:outline-none;
+    }
+
+    /* TextFieldInputContainer */
+    /* .TextFieldInputContainer {
+        @apply flex items-center relative w-fit;
+    } */
+
+    .TextFieldInputContainer .TextFieldInput {
+        @apply w-full;
+    }
+
+    /* NavigationMenu.tsx */
+    .NavigationMenu {
+        @apply flex-1 space-x-1 lg:space-x-2.5 dark:text-gray-300
+        items-center flex-wrap flex;
+    }
+
+    .NavigationMenu.VerticalNavigationMenu {
+        @apply flex flex-row justify-between space-x-2 lg:justify-start
+        lg:flex-col lg:space-x-0 lg:space-y-1 items-start;
+    }
+
+    /* NavigationItem.tsx */
+    .NavigationItem {
+        @apply leading-loose
+        transition-colors dark:text-gray-300
+        text-gray-600 flex items-center text-sm;
+    }
+
+    .NavigationItem a {
+        @apply p-1 lg:px-2.5 flex flex-col lg:flex-row items-center justify-center lg:justify-start rounded-md font-medium w-full transition-colors outline-primary-200 dark:outline-primary-500/70;
+    }
+
+    .PillNavigationMenu .NavigationItemActive a {
+        @apply bg-gray-50 text-gray-600 text-current dark:bg-black-300 dark:text-white;
+    }
+
+    .PillNavigationMenu .NavigationItemNotActive a {
+        @apply hover:bg-gray-50 active:bg-gray-100 text-gray-500 dark:text-gray-300 dark:hover:bg-black-400 dark:active:bg-black-300;
+    }
+
+    .SecondaryNavigationMenu .NavigationItemActive a {
+        @apply bg-transparent font-semibold;
+    }
+
+    .BorderedNavigationMenu {
+        @apply border-b border-gray-100 dark:border-black-200;
+    }
+
+    .BorderedNavigationMenu .NavigationItem {
+        @apply h-14 border-b-[0.15rem] relative border-transparent top-[1px];
+    }
+
+    .BorderedNavigationMenu .NavigationItemActive {
+        @apply border-primary-500 text-current font-semibold dark:text-white bg-transparent rounded-none;
+    }
+
+    .BorderedNavigationMenu .NavigationItemNotActive a {
+        @apply hover:bg-gray-50 dark:hover:bg-black-300 transition-colors rounded-lg;
+    }
+
+    .NavigationItemNotActive {
+        @apply active:text-current text-gray-600 dark:text-gray-300
+        hover:text-current dark:hover:text-white;
+    }
+
+    .NavigationItemActive {
+        @apply font-semibold text-black-600 dark:text-white;
+    }
+
+    .NavigationItem a[aria-disabled='true'] {
+        @apply cursor-not-allowed text-gray-300 dark:text-gray-600;
+    }
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:active,
+    input:-webkit-autofill:focus {
+        @apply border-none m-[-1px] shadow-sm;
+    }
+
+    .TabsList {
+        @apply flex px-1 py-1 dark:bg-black-500 grid grid-cols-3 gap-1;
+    }
+
+    /* Tab.tsx */
+    .Tab {
+        @apply NavigationItem flex flex-1 justify-center;
+    }
+
+    .Tab:not(.TabSelected) {
+        @apply hover:bg-gray-50 dark:active:bg-black-300
+        cursor-pointer dark:bg-black-500 dark:hover:bg-black-400;
+    }
+
+    .TabSelected,
+    button.TabSelected {
+        @apply NavigationItemActive dark:text-gray-100;
+    }
+
+    /* Documentation */
+    .DocumentationSidebarContainer {
+        @apply mt-6 sticky inset-0 hidden md:flex overflow-y-auto h-screen;
+    }
+
+    .DocumentationSidebarItem {
+        @apply flex dark:active:bg-black-400 active:bg-gray-100 flex-1
+        text-sm text-gray-500 dark:text-gray-400 hover:text-current rounded-md
+        py-1.5 px-2 transition-colors duration-300 w-full;
+    }
+
+    .DocumentationSidebarItemContainer:last-child {
+        @apply pb-24;
+    }
+
+    .DocumentationSidebarItemSelected {
+        @apply font-semibold text-current dark:text-primary-500 bg-primary-500/5;
+    }
+
+    .DocumentationSidebarItemNotSelected {
+        @apply hover:border-l-primary-400 dark:hover:text-white
+        dark:border-l-black-400 font-medium border-l-gray-50;
+    }
+
+    .Toggle {
+        @apply h-6 w-12 cursor-pointer appearance-none
+        bg-gray-600 dark:bg-gray-300 duration-300 ease-in-out rounded-xl;
+
+        transition: all 0.25s ease-in-out;
+        box-shadow: calc(1.5rem * -1) 0 0 2px #efefef inset, 0 0 0 2px #efefef inset;
+    }
+
+    .dark .Toggle {
+        box-shadow: calc(1.5rem * -1) 0 0 2px #525252 inset, 0 0 0 2px #525252 inset;
+    }
+
+    .Toggle:hover {
+        box-shadow: calc(1.5rem * -1) 0 0 2px #ddd inset, 0 0 0 2px #ddd inset;
+    }
+
+    .dark .Toggle:hover {
+        box-shadow: calc(1.5rem * -1) 0 0 2px #666 inset, 0 0 0 2px #666 inset;
+    }
+
+    .Toggle:focus-visible {
+        @apply outline outline-primary-500;
+
+        outline-offset: 2px;
+    }
+
+    .Toggle:checked {
+        @apply border-opacity-100 bg-opacity-100
+        bg-primary-500 border-primary-400;
+
+        box-shadow: 1.5rem 0 0 2px #eee inset, 0 0 0 2px #eee inset;
+    }
+
+    .dark .Toggle:checked {
+        box-shadow: 1.5rem 0 0 2px #444 inset, 0 0 0 2px #444 inset;
+    }
+
+    .Stepper {
+        @apply flex flex-col md:flex-row md:space-x-2 justify-between shadow-sm
+        px-2 py-1 rounded-md dark:border-black-400 dark:bg-black-400;
+    }
+
+    .StepperDivider {
+        @apply flex bg-gray-300 dark:bg-black-200 h-full
+        ml-[1.5rem] md:ml-0 min-h-[8px] md:min-h-0 w-[2px] md:w-full md:h-[2px]
+        flex-1 transition-colors md:self-center;
+    }
+
+    .StepperDivider:last-child {
+        display: none;
+    }
+
+    .StepperStepSelected + .StepperDivider,
+    .StepperStep.CompletedStep + .StepperDivider {
+        @apply bg-primary-500 text-primary-contrast;
+    }
+
+    .StepperStep:not(.StepperStepSelected):not(.CompletedStep):hover + .StepperDivider {
+        @apply bg-primary-500/40;
+    }
+
+    .StepperStepCircle {
+        @apply rounded-full w-[35px] h-[35px] shadow duration-150
+        font-bold flex justify-center items-center shadow-none
+        bg-gray-200 dark:bg-black-200 transition-colors;
+    }
+
+    .StepperStep.StepperStepSelected {
+        @apply dark:text-white text-gray-600;
+    }
+
+    .StepperStepSelected .StepperStepCircle {
+        @apply bg-primary-500 text-white;
+    }
+
+    .StepperStep {
+        @apply flex items-center space-x-4 dark:text-gray-400 text-gray-600
+        transition-colors p-2 cursor-default outline-none;
+    }
+
+    .StepperStep.StepperStepActionable.StepperStepClickable:not(.StepperStepSelected):not([disabled]):hover {
+        @apply dark:text-primary-contrast text-gray-600 cursor-pointer;
+    }
+
+    .StepperStep.StepperStepActionable.StepperStepClickable:not(.StepperStepSelected):not([disabled]):hover .StepperStepCircle {
+        @apply bg-primary-500 text-primary-contrast;
+    }
+
+    .StepperStep:not(.StepperStepSelected):disabled,
+    .StepperStep:not(.Actionable):not(.StepperStepSelected) {
+        @apply dark:text-gray-500 text-gray-400;
+    }
+
+    .Table {
+        @apply bg-white dark:bg-black-500 p-1 w-full border-collapse rounded-lg table-fixed border-spacing-0;
+    }
+
+    .Table thead {
+        @apply sticky top-0 m-0 bg-white dark:bg-black-500;
+    }
+
+    .Table th {
+        @apply text-left py-4 uppercase font-bold text-gray-600
+        dark:text-gray-400 text-xs border-b border-gray-200 dark:border-black-300;
+    }
+
+    .Table tr {
+        @apply border-b border-gray-100 dark:border-black-400;
+    }
+
+    .Table tr:last-child {
+        @apply border-transparent;
+    }
+
+    .Table td {
+        @apply py-2.5 text-sm;
+    }
+}
+/* Stop purging. */
